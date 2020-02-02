@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="s003">
+<form method="POST" action="">
+    <div class="inner-form">
+    <div class="input-field first-wrap">
+        <div class="input-select">
+        <select data-trigger="" name="choices-single-defaul">
+            <option placeholder="">Category</option>
+            {% for category in categories%}
+            <option>{{ category }}</option>
+            {% endfor %}
+         <!--   <option placeholder="">Category</option>
+            <option>New Arrivals</option>
+            <option>Sale</option>
+            <option>Ladies</option>
+            <option>Men</option>
+            <option>Clothing</option>
+            <option>Footwear</option>
+            <option>Accessories</option>  -->
+        </select>
+        </div>
+    </div>
+    <div class="input-field second-wrap">
+        {% if searchQuery %}
+            <input id="search" name="skills" type="text" placeholder="Enter Skills" value="{{ searchQuery }}"/>
+        {% else %}
+            <input id="search" name="skills" type="text" placeholder="Enter Skills" />
+        {% endif %}
+    </div>
+    <div class="input-field third-wrap">
+        <button class="btn btn-primary" name="submit_button" type="submit" style="height: 100%;" value="Filter">Filter</button>
+    </div>
+    
+    <div class="input-field third-wrap">
+        <button class="btn-search" name="submit_button" type="button submit" value="Search">Search</button>
+        
+        </button>
+    </div>
+    </div>
+</form>
+</div>
+{% if filters_list %}
+    <p>
+        {% for x in filters_list %}
+            <button type="button" onclick="onbuttonclick('{{ x }}')"  class="btn btn-outline-primary">{{ x }}</button>
+        {% endfor %}
+    </p>
+{% endif %}
+<script src="../static/js/extention/choices.js"></script>
+<script>
+    const choices = new Choices('[data-trigger]',
+    {
+        searchEnabled: false,
+        itemSelectText: '',
+    });
+
+    function onbuttonclick(filter){
+        var a = document.getElementById('search').value;
+        console.log(a);
+        a = a.concat(",")
+        a= a.concat(filter)
+        document.getElementById('search').value = a;
+    }
+</script>
+
+
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+  #button {
+    background-color: #4e73df;
+  }
+</style>
+  <header class="jumbotron my-4" style="text-align:center;">
+    <h3 class="display-3" style="text-align:center;">- RECRUITZEN -</h3>
+    <p class="lead">We help you find the best candidate that suit s your needs.</p>
+    <p class="lead">Recruitement made SIMPLE</p>
+    <p class="lead">More data is coming soon ... Stay Tuned</p>
+    {% if not current_user.is_authenticated %}
+      <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg" id="button">Register Now!</a>
+    {% endif %}
+  </header>
+{% endblock content %}

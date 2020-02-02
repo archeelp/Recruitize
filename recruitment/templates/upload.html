@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<style type="text/css">
+    .files input {
+        outline: 2px dashed #ffffff;
+        outline-offset: -10px;
+        -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+        transition: outline-offset .15s ease-in-out, background-color .15s linear;
+        padding: 120px 0px 85px 35%;
+        text-align: center !important;
+        margin: 0;
+        width: 100% !important;
+        }
+        .files input:focus{     outline: 2px dashed hsl(185, 18%, 64%);  outline-offset: -10px;
+        -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+        transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
+        }
+        .files{ position:relative}
+        .files:after {  pointer-events: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 50px;
+        right: 0;
+        height: 56px;
+        content: "";
+        background-image: url(../static/img/uploadlogo.png);
+        display: block;
+        margin: 0 auto;
+        background-size: 100%;
+        background-color: #4e73df;
+        background-repeat: no-repeat;
+        }
+        .color input{ background-color:#4e73df;}
+        .files:before {
+        position: absolute;
+        bottom: -10px;
+        left: 0;  pointer-events: none;
+        width: 100%;
+        right: 0;
+        height: 57px;
+        content: "or Drag the file here";
+        display: block;
+        margin: 0 auto;
+        color: white;
+        font-weight: 600;
+        text-transform: capitalize;
+        text-align: center;
+    }
+    </style>
+
+<div class="container-fluid text-center" style="height: 100%;">
+    <div class="row" style="padding-left: 30%; padding-top: 13%;">
+       <div class="col-md-6">
+          <form method="post" action="" id="#" enctype="multipart/form-data">
+           
+              
+              
+              
+              <div class="form-group files color">
+                <label>Upload Your File </label>
+                <div style="background-color: #4e73df;">
+                    <input type="file" name="uploadfile" class="form-control" multiple="">
+                </div>
+                
+              </div>
+              
+              <input type="submit" value="Submit" class="btn btn-primary" style="background-color:#4e73df;">
+
+          </form>
+          
+          
+      </div>
+    </div>
+</div>
+
+{% endblock content %}
