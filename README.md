@@ -1,2 +1,2 @@
 # Recruitize
-This is a recruiter assisting website to shortlist the applicants and to get the best profiles meeting their company requirements.
+This is a recruiter assisting website to shortlist applicants and get the best profiles which meet the company's requirements.
